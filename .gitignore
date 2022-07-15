@@ -15,3 +15,6 @@ data_*/
 .cache/
 .user/
 .unsaved/
+
+# Blender residual stuff
+*.blend
