@@ -4,7 +4,7 @@
 
 [sub_resource type="CylinderShape" id=1]
 
-[node name="Spatial" type="RigidBody"]
+[node name="Monster" type="RigidBody" groups=["monsters"]]
 mode = 1
 
 [node name="tree" type="MeshInstance" parent="."]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Scenes/Mountain/dice.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Mountain/Dice.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Mountain/tree.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Mountain/vhsjwh633jt81.webp" type="Texture" id=3]
 [ext_resource path="res://Scenes/Mountain/Mountain.gd" type="Script" id=4]
@@ -26,9 +26,9 @@ transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 4 )
 
-[node name="StaticBody" type="StaticBody" parent="Hill"]
+[node name="Ground" type="StaticBody" parent="Hill"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Hill/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Hill/Ground"]
 shape = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
@@ -40,7 +40,8 @@ input_ray_pickable = false
 mass = 25.19
 physics_material_override = SubResource( 3 )
 gravity_scale = 4.67
-continuous_cd = true
+contacts_reported = 100
+contact_monitor = true
 can_sleep = false
 linear_damp = 1.361
 angular_damp = 3.27
@@ -66,3 +67,6 @@ transform = Transform( -0.0297809, 0.825419, -0.563734, 0.0435444, 0.56452, 0.82
 light_color = Color( 0.890196, 0.764706, 0.368627, 1 )
 light_energy = 1.812
 light_indirect_energy = 1.528
+
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 3.0

@@ -5,4 +5,3 @@
 [node name="Spatial" type="RigidBody"]
 
 [node name="d20" parent="." instance=ExtResource( 1 )]
-visible = true

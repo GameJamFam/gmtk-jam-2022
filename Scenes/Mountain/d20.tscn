@@ -10,7 +10,7 @@ points = PoolVector3Array( -3.95621, -1.26594, -7.19602, -3.82957, -1.61144, -7.
 albedo_texture = ExtResource( 1 )
 
 [node name="d20" type="CollisionShape"]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+transform = Transform( 0.166846, 0, 0, 0, 0.166846, 0, 0, 0, 0.166846, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="d20" type="MeshInstance" parent="."]
