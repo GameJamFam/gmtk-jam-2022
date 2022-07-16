@@ -14,5 +14,4 @@ func _on_Start_pressed():
 	var game = MainGame.instance()
 	self.add_child(game)
 	$sounds.stop_all()
-	$sounds.play_bgm('mountain')
-
+	# $sounds.play_bgm('mountain')
