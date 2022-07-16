@@ -17,6 +17,80 @@ data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0,
 [sub_resource type="PhysicsMaterial" id=3]
 friction = 2.22
 rough = true
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://Models/Dice/d8.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Models/Dice/d12.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Models/Dice/d20.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://Models/Dice/d4.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://Models/Dice/d6.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://Models/Dice/d6tex.png" type="Texture" id=6]
+[ext_resource path="res://Models/Dice/d8tex.png" type="Texture" id=7]
+[ext_resource path="res://Models/Dice/d20tex.png" type="Texture" id=8]
+[ext_resource path="res://Models/Dice/d12tex.png" type="Texture" id=9]
+[ext_resource path="res://Models/Dice/d4tex.png" type="Texture" id=10]
+[ext_resource path="res://Models/Obstacles/Vampire_Lord.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://Models/Obstacles/Ooze.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://Models/Obstacles/Centaurtaur.obj" type="ArrayMesh" id=13]
+[ext_resource path="res://Models/Obstacles/Manticore.obj" type="ArrayMesh" id=14]
+[ext_resource path="res://Models/Obstacles/Stone_Golem.obj" type="ArrayMesh" id=15]
+[ext_resource path="res://Models/Obstacles/Bugbear.obj" type="ArrayMesh" id=16]
+[ext_resource path="res://Models/Obstacles/Ettin.obj" type="ArrayMesh" id=17]
+[ext_resource path="res://Models/Obstacles/pencil.obj" type="ArrayMesh" id=18]
+[ext_resource path="res://Models/Obstacles/can.obj" type="ArrayMesh" id=19]
+[ext_resource path="res://Models/Obstacles/penciltex.png" type="Texture" id=20]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 10 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 6 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 7 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 9 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 8 )
+
+[sub_resource type="SpatialMaterial" id=6]
+
+[sub_resource type="SpatialMaterial" id=7]
+
+[sub_resource type="SpatialMaterial" id=11]
+
+[sub_resource type="SpatialMaterial" id=12]
+
+[sub_resource type="SpatialMaterial" id=13]
+
+[sub_resource type="SpatialMaterial" id=14]
+
+[sub_resource type="SpatialMaterial" id=15]
+
+[sub_resource type="SpatialMaterial" id=16]
+
+[sub_resource type="SpatialMaterial" id=17]
+
+[sub_resource type="SpatialMaterial" id=18]
+
+[sub_resource type="SpatialMaterial" id=19]
+
+[sub_resource type="SpatialMaterial" id=20]
+
+[sub_resource type="SpatialMaterial" id=21]
+
+[sub_resource type="SpatialMaterial" id=22]
+
+[sub_resource type="SpatialMaterial" id=23]
+
+[sub_resource type="SpatialMaterial" id=8]
+
+[sub_resource type="SpatialMaterial" id=9]
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_texture = ExtResource( 20 )
 
 [node name="Mountain" type="Spatial"]
 script = ExtResource( 4 )
@@ -70,3 +144,84 @@ light_indirect_energy = 1.528
 
 [node name="HitTimer" type="Timer" parent="."]
 wait_time = 3.0
+[node name="d4" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -37.9761, 0, -0.252489 )
+mesh = ExtResource( 4 )
+material/0 = SubResource( 1 )
+
+[node name="d6" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 24.038, 0, 0 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 2 )
+
+[node name="d8" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 50.2796, 0, -0.145339 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="d12" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+
+[node name="d20" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 85.7281, 0, -0.32929 )
+mesh = ExtResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Centaurtaur" type="MeshInstance" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 58.056, 0, 32.2137 )
+mesh = ExtResource( 13 )
+material/0 = SubResource( 6 )
+material/1 = SubResource( 7 )
+
+[node name="Bugbear" type="MeshInstance" parent="Centaurtaur"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.1861, 0, 0 )
+mesh = ExtResource( 16 )
+material/0 = SubResource( 11 )
+material/1 = SubResource( 12 )
+material/2 = SubResource( 13 )
+
+[node name="Ettin" type="MeshInstance" parent="Centaurtaur/Bugbear"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -140.325, 0, 0 )
+mesh = ExtResource( 17 )
+material/0 = SubResource( 14 )
+material/1 = SubResource( 15 )
+
+[node name="Manticore" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -97.8218, 0, 42.7961 )
+mesh = ExtResource( 14 )
+material/0 = SubResource( 16 )
+material/1 = SubResource( 17 )
+material/2 = SubResource( 18 )
+material/3 = SubResource( 19 )
+
+[node name="Ooze" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36.095 )
+mesh = ExtResource( 12 )
+material/0 = SubResource( 20 )
+material/1 = SubResource( 21 )
+
+[node name="Vampire_Lord" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -154.297, 0, 39.6811 )
+mesh = ExtResource( 11 )
+skeleton = NodePath("../Stone_Golem")
+material/0 = SubResource( 22 )
+material/1 = SubResource( 23 )
+
+[node name="Stone_Golem" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 118.531, 0, 33.95 )
+mesh = ExtResource( 15 )
+material/0 = SubResource( 8 )
+material/1 = SubResource( 9 )
+
+[node name="pencil" type="MeshInstance" parent="."]
+transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 145.803, 1, 77.5575 )
+mesh = ExtResource( 18 )
+material/0 = SubResource( 10 )
+
+[node name="can" type="MeshInstance" parent="."]
+transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 121.318 )
+mesh = ExtResource( 19 )
+material/0 = null
+material/1 = null

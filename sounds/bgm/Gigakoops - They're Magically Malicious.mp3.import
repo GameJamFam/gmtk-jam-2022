@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Gigakoops - They're Magically Malicious.mp3-74b1a0aa3404727e69321b0673768597.mp3str"
+
+[deps]
+
+source_file="res://sounds/bgm/Gigakoops - They're Magically Malicious.mp3"
+dest_files=[ "res://.import/Gigakoops - They're Magically Malicious.mp3-74b1a0aa3404727e69321b0673768597.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
