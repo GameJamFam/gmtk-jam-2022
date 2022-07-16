@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/PEG & The Rejected - All Sing Along.mp3-3991b0c2b91e6b7b6ab8bd89b32609f5.mp3str"
+
+[deps]
+
+source_file="res://sounds/bgm/PEG & The Rejected - All Sing Along.mp3"
+dest_files=[ "res://.import/PEG & The Rejected - All Sing Along.mp3-3991b0c2b91e6b7b6ab8bd89b32609f5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

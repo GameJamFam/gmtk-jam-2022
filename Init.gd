@@ -4,6 +4,7 @@ export (PackedScene) var MainGame
 
 func _ready():
 	$Menu/Start.connect("pressed", self, "_on_Start_pressed")
+	$sounds.play_bgm('title')
 
 func _on_Start_pressed():
 	# clear out current children
@@ -12,15 +13,6 @@ func _on_Start_pressed():
 			ch.queue_free()
 	var game = MainGame.instance()
 	self.add_child(game)
+	$sounds.stop_all()
+	$sounds.play_bgm('mountain')
 
-func play_one_shot(sfx):
-	pass
-
-func play(sfx):
-	pass
-
-func stop(sfx):
-	pass
-
-func stop_all():
-	pass
