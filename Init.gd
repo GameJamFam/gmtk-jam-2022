@@ -12,3 +12,15 @@ func _on_Start_pressed():
 			ch.queue_free()
 	var game = MainGame.instance()
 	self.add_child(game)
+
+func play_one_shot(sfx):
+	pass
+
+func play(sfx):
+	pass
+
+func stop(sfx):
+	pass
+
+func stop_all():
+	pass
