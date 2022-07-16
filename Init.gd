@@ -14,5 +14,6 @@ func _on_Start_pressed():
 	var game = MainGame.instance()
 	self.add_child(game)
 	$sounds.stop_all()
-	$sounds.play_bgm('mountain')
-
+	# $sounds.play_bgm('mountain')
+	yield(get_tree().create_timer(0.5), "timeout")
+	$sounds.play_sfx('monsterHit')

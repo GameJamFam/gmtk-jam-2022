@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/d20 water splash + travel.mp3-4aa99a9a5ea646d29b7d5ab343794baa.mp3str"
+
+[deps]
+
+source_file="res://sounds/sfx/d20 water splash + travel.mp3"
+dest_files=[ "res://.import/d20 water splash + travel.mp3-4aa99a9a5ea646d29b7d5ab343794baa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

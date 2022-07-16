@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/inert collision.mp3-a22c58d877df24d2dfb7ad87c89005ee.mp3str"
+
+[deps]
+
+source_file="res://sounds/sfx/inert collision.mp3"
+dest_files=[ "res://.import/inert collision.mp3-a22c58d877df24d2dfb7ad87c89005ee.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
