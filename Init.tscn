@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Models/mt-fuckoff.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Models/Dice/d20.obj" type="ArrayMesh" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://Scenes/MainMenu/Main.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Init.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Mountain/Mountain.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Models/Dice/d20tex.png" type="Texture" id=7]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 7 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 5 )
@@ -38,9 +42,9 @@ material/1 = null
 material/2 = null
 
 [node name="d20" type="MeshInstance" parent="mt_fuckoff"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.9279, 5.81492, 22.6565 )
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 29.9279, 5.81492, 22.6565 )
 mesh = ExtResource( 2 )
 skeleton = NodePath("")
-material/0 = null
+material/0 = SubResource( 1 )
 
 [node name="sounds" type="Node" parent="."]
