@@ -4,6 +4,8 @@ export var rolling_force = 10
 export var currDieIdx = 0
 var dTypes = ["d20", "d12", "d8", "d6", "d4"]
 
+const dicePath = "res://Scenes/Mountain/%s.tscn"
+
 func _ready():
 	pass
 
@@ -23,14 +25,16 @@ func _physics_process(delta):
 		switchDice()
 		
 func switchDice():
-	currDieIdx = currDieIdx + 1
-	if currDieIdx >= dTypes.size():
-		currDieIdx = 0
-	var nextDie = dTypes[currDieIdx]
+	var currDie = get_children()[0]
 	
-	for d in dTypes:
-		var visDis = false
-		if d == nextDie:
-			visDis = true
-		get_node(d).disabled = visDis
-		get_node(d).visible = visDis
+	
+	var nextDieIdx = currDieIdx + 1
+	if nextDieIdx >= dTypes.size():
+		nextDieIdx = 0
+	var nextDie = load(dicePath % dTypes[nextDieIdx])
+	
+	add_child(nextDie.instance())
+	remove_child(currDie)
+	
+	currDieIdx = nextDieIdx
+	

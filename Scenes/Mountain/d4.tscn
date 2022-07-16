@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Models/Dice/d4.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( 1.04126, -0.24874, 0.0398815, 0.0230848, 1.19126, 0.0398815, -0.486083, -0.24874, 0.921786, 1.01813, -0.314014, -5.96046e-08, 1.04126, -0.24874, -0.040062, 0.0230848, 1.19126, -0.040062, -0.0463045, 1.19126, -5.96046e-08, -0.509213, -0.314014, 0.881724, -0.555316, -0.24874, 0.881724, -0.509213, -0.314014, -0.881904, -0.486083, -0.24874, -0.921786, -0.555316, -0.24874, -0.881904 )
+
+[node name="d4" type="CollisionShape"]
+shape = SubResource( 3 )
+
+[node name="d4" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+material/0 = null
