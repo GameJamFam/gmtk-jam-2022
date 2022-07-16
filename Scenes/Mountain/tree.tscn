@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Models/Obstacles/tree.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+
+[node name="Spatial" type="RigidBody"]
+mode = 1
+
+[node name="tree" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.32094, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.852713, 0, 0, 0, 2.78734, 0, 0, 0, 0.852713, 0, 2.53229, 0 )
+shape = SubResource( 1 )

@@ -1,10 +1,50 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Models/Dice/d4.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Scenes/Mountain/dice.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Mountain/tree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Mountain/Mountain.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Mountain/Dice.gd" type="Script" id=5]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
+
+[sub_resource type="PhysicsMaterial" id=3]
+friction = 2.22
+rough = true
 
 [node name="Mountain" type="Spatial"]
+script = ExtResource( 4 )
 
-[node name="d4" type="MeshInstance" parent="."]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
-mesh = ExtResource( 1 )
+[node name="Hill" type="MeshInstance" parent="."]
+transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0 )
+mesh = SubResource( 1 )
 material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Hill"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Hill/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.51589, 6.47258 )
+
+[node name="Die" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.23813, 0 )
+input_ray_pickable = false
+mass = 25.19
+physics_material_override = SubResource( 3 )
+gravity_scale = 4.67
+continuous_cd = true
+can_sleep = false
+linear_damp = 1.361
+angular_damp = 3.27
+script = ExtResource( 5 )
+rolling_force = 5
+
+[node name="Spatial2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8952, -4.76837e-07, -2.91223 )
+
+[node name="Spatial" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.61675, -2.38419e-07, 12.4659 )
