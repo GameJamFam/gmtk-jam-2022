@@ -1,13 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Mountain/Dice.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Mountain/tree.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Mountain/vhsjwh633jt81.webp" type="Texture" id=3]
 [ext_resource path="res://Scenes/Mountain/Mountain.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Mountain/Dice.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Mountain/Bugbear.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Mountain/Ettin.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Mountain/Manticor.tscn" type="PackedScene" id=8]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -54,6 +51,9 @@ rolling_force = 5
 [node name="Spatial2" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8952, -4.76837e-07, -2.91223 )
 
+[node name="Spatial" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.61675, -2.38419e-07, 12.4659 )
+
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7341, 19.7586, 5.97802 )
 visible = false
@@ -70,12 +70,3 @@ light_indirect_energy = 1.528
 
 [node name="HitTimer" type="Timer" parent="."]
 wait_time = 3.0
-
-[node name="Monster" parent="." instance=ExtResource( 6 )]
-transform = Transform( -0.821219, 0, -0.570613, 0, 1, 0, 0.570613, 0, -0.821219, 22.9373, -4.76837e-07, 11.7879 )
-
-[node name="Monster2" parent="." instance=ExtResource( 7 )]
-transform = Transform( -0.95658, 0, -0.29147, 0, 1, 0, 0.29147, 0, -0.95658, 10.4073, 0.0387707, 10.0105 )
-
-[node name="Monster3" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.299057, 0, -0.954235, 0, 1, 0, 0.954235, 0, 0.299057, 30.4563, 2.38419e-07, 2.01304 )

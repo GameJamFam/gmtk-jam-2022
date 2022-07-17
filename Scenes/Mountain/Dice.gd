@@ -7,6 +7,7 @@ export var rolling_force = 10
 export var currDieIdx = 0
 export var max_angular_velocity = 10
 var dTypes = ["d20", "d12", "d8", "d6", "d4"]
+onready var sounds = get_node("/root/Main/sounds")
 
 const dicePath = "res://Scenes/Mountain/%s.tscn"
 
@@ -17,10 +18,6 @@ func _process(delta):
 			emit_signal("monster_hit")
 
 func _physics_process(delta):
-	
-	
-	#if lv.x > 4 or lv.y >4 or lv.z > 4:
-	#	print()
 	if Input.is_action_pressed("forward"):
 		angular_velocity.z = clamp(angular_velocity.z - (rolling_force*delta), -1 * max_angular_velocity, max_angular_velocity)
 	elif Input.is_action_pressed("back"):
@@ -30,12 +27,14 @@ func _physics_process(delta):
 		angular_velocity.x = clamp(angular_velocity.x - (rolling_force*delta), -1 * max_angular_velocity, max_angular_velocity)
 	elif Input.is_action_pressed("right"):
 		angular_velocity.x = clamp(angular_velocity.x + (rolling_force*delta), -1 * max_angular_velocity, max_angular_velocity)
-		
-#	if Input.is_action_just_pressed("ui_accept"):
-#		switchDice()
 
 	
-
+func _input(event):
+	if Input.is_action_pressed("forward") or Input.is_action_pressed("back") or Input.is_action_pressed("left") or Input.is_action_pressed("right"):
+		get_node("/root/Main/sounds").play_sfx("snowRoll")	
+			
+			
+		
 
 func switch_dice():
 	var currDie = get_children()[0]

@@ -17,3 +17,5 @@ func _reconnect_oneshot_signals():
 	$HitTimer.start()
 	yield($HitTimer, "timeout")
 	$Die.connect("monster_hit", $Die, "switch_dice", [], CONNECT_ONESHOT)
+	
+
