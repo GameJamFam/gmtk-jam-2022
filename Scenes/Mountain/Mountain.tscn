@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Mountain/Dice/Die.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Mountain/Monsters/Centaurtaur.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Mountain/vhsjwh633jt81.webp" type="Texture" id=3]
+[ext_resource path="res://2D/vinyl mat.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Mountain/Mountain.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Mountain/Dice/Die.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Mountain/Monsters/Bugbear.tscn" type="PackedScene" id=6]
@@ -15,6 +15,7 @@
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 100, 100, 1 )
 
 [sub_resource type="ConcavePolygonShape" id=2]
 data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )

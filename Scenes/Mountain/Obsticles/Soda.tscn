@@ -34,3 +34,5 @@ shape = SubResource( 7 )
 
 [connection signal="area_entered" from="Spill" to="Spill" method="_on_Spill_area_entered"]
 [connection signal="area_exited" from="Spill" to="Spill" method="_on_Spill_area_exited"]
+[connection signal="body_entered" from="Spill" to="Spill" method="_on_Spill_body_entered"]
+[connection signal="body_exited" from="Spill" to="Spill" method="_on_Spill_body_exited"]

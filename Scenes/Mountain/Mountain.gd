@@ -1,5 +1,6 @@
 extends Spatial
 
+signal game_won
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,5 +20,8 @@ func _reconnect_oneshot_signals():
 	yield($HitTimer, "timeout")
 	$Die.stop_flash()
 	$Die.connect("monster_hit", $Die, "switch_dice", [], CONNECT_ONESHOT)
-	
 
+func _on_levelend_body_entered(body):
+	if body.name != 'Die':
+		return
+	emit_signal("game_won")

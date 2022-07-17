@@ -23,7 +23,8 @@ animations = [ {
 script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 498, 233 )
+scale = Vector2( 0.424242, 0.424243 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 playing = true

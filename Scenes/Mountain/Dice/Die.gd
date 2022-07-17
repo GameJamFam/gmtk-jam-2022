@@ -12,6 +12,7 @@ export var invincible = false
 export var flash_amount = 10
 export var flash_speed = 4
 
+onready var sounds = get_node('/root/Main/sounds')
 const dice_path = "res://Scenes/Mountain/Dice/%s.tscn"
 var flash_counter = 0
 var dice_types = ["d20", "d12", "d8", "d6", "d4"]
@@ -73,5 +74,6 @@ func switch_dice():
 	remove_child(currDie)
 	
 	curr_die_idx = nextDieIdx
+	sounds.play_sfx('monsterHit')
 	emit_signal("dice_switched")
 	

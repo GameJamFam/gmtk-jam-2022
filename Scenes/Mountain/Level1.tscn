@@ -1,0 +1,245 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scenes/Mountain/Dice/Die.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Mountain/Monsters/Centaurtaur.tscn" type="PackedScene" id=2]
+[ext_resource path="res://2D/vinyl mat.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Mountain/Mountain.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Mountain/Dice/Die.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Mountain/Monsters/Bugbear.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Mountain/Monsters/Ettin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Mountain/Monsters/Manticor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Mountain/Obsticles/Soda.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Mountain/Guy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Mountain/Obsticles/Pencil.tscn" type="PackedScene" id=11]
+[ext_resource path="res://2D/win.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Mountain/Points.tscn" type="PackedScene" id=13]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 150, 50, 0 )
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
+
+[sub_resource type="PhysicsMaterial" id=3]
+friction = 2.22
+rough = true
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 12 )
+uv1_scale = Vector3( 10, 10, 10 )
+
+[sub_resource type="BoxShape" id=5]
+
+[node name="Mountain" type="Spatial"]
+transform = Transform( 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0, 1, 0, 0, 0 )
+script = ExtResource( 4 )
+
+[node name="Hill" type="MeshInstance" parent="."]
+transform = Transform( 150, 0, 0, 0, 1, 0, 0, 0, 50, 118.824, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 4 )
+
+[node name="Ground" type="StaticBody" parent="Hill"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Hill/Ground"]
+shape = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.51589, 6.47258 )
+
+[node name="Die" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.23813, 0 )
+input_ray_pickable = false
+mass = 25.19
+physics_material_override = SubResource( 3 )
+gravity_scale = 4.67
+contacts_reported = 100
+contact_monitor = true
+can_sleep = false
+linear_damp = 1.361
+angular_damp = 3.27
+script = ExtResource( 5 )
+rolling_force = 5
+flash_amount = 1
+
+[node name="Spatial2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 162.457, -4.76837e-07, 1.43769 )
+
+[node name="Spatial3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 139.035, -4.76837e-07, 29.7236 )
+
+[node name="Spatial4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 156.973, -4.76837e-07, 17.4989 )
+
+[node name="Spatial5" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 90.8512, -4.76837e-07, 0.0992451 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7341, 19.7586, 5.97802 )
+visible = false
+light_color = Color( 0.945098, 0.921569, 0.67451, 1 )
+light_energy = 1.224
+light_specular = 16.0
+omni_range = 57.313
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.0297809, 0.825419, -0.563734, 0.0435444, 0.56452, 0.82427, 0.998608, 3.35793e-08, -0.0527543, -10.772, 20.0357, -4.96634 )
+light_color = Color( 0.890196, 0.764706, 0.368627, 1 )
+light_energy = 0.491
+light_indirect_energy = 0.354
+light_specular = 0.206
+
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Monster" parent="." instance=ExtResource( 6 )]
+transform = Transform( -0.821219, 0, -0.570613, 0, 1, 0, 0.570613, 0, -0.821219, 22.9373, -4.76837e-07, 14.3182 )
+
+[node name="Monster2" parent="." instance=ExtResource( 7 )]
+transform = Transform( -0.95658, 0, -0.29147, 0, 1, 0, 0.29147, 0, -0.95658, 124.509, 0.0387707, -27.8002 )
+
+[node name="Monster7" parent="." instance=ExtResource( 7 )]
+transform = Transform( -0.95658, 0, -0.29147, 0, 1, 0, 0.29147, 0, -0.95658, 10.4073, 0.0387707, -26.6791 )
+
+[node name="Monster8" parent="." instance=ExtResource( 7 )]
+transform = Transform( -0.95658, 0, -0.29147, 0, 1, 0, 0.29147, 0, -0.95658, 10.4073, 0.0387707, 8.74534 )
+
+[node name="Monster9" parent="." instance=ExtResource( 7 )]
+transform = Transform( -0.95658, 0, -0.29147, 0, 1, 0, 0.29147, 0, -0.95658, 10.4073, 0.0387707, 25.2787 )
+
+[node name="Monster10" parent="." instance=ExtResource( 7 )]
+transform = Transform( -0.95658, 0, -0.29147, 0, 1, 0, 0.29147, 0, -0.95658, 76.3112, 0.0387707, 10.0105 )
+
+[node name="Monster3" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.299057, 0, -0.954235, 0, 1, 0, 0.954235, 0, 0.299057, 30.4563, 2.38419e-07, -2.41502 )
+
+[node name="Monster4" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.299057, 0, -0.954235, 0, 1, 0, 0.954235, 0, 0.299057, 58.7551, 2.38419e-07, 20.5102 )
+
+[node name="Monster5" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.299057, 0, -0.954235, 0, 1, 0, 0.954235, 0, 0.299057, 131.965, 2.38419e-07, -12.544 )
+
+[node name="Monster6" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.299057, 0, -0.954235, 0, 1, 0, 0.954235, 0, 0.299057, 61.8994, 2.38419e-07, -18.9842 )
+
+[node name="SodaCan" parent="." instance=ExtResource( 9 )]
+transform = Transform( 0.461625, 0, -0.887075, 0, 1, 0, 0.887075, 0, 0.461625, 175.568, 4.76837e-07, -24.2447 )
+
+[node name="SodaCan2" parent="." instance=ExtResource( 9 )]
+transform = Transform( 0.490112, 0, 0.871659, 0, 1, 0, -0.871659, 0, 0.490112, 36.0364, 4.76837e-07, 34.67 )
+
+[node name="SodaCan3" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.987699, 0, 0.156365, 0, 1, 0, -0.156365, 0, -0.987699, 198.656, 4.76837e-07, 2.85858 )
+
+[node name="SodaCan4" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.822223, 0, -0.569165, 0, 1, 0, 0.569165, 0, -0.822223, 90.5775, 4.76837e-07, -19.2255 )
+
+[node name="SodaCan5" parent="." instance=ExtResource( 9 )]
+transform = Transform( 0.461625, 0, -0.887075, 0, 1, 0, 0.887075, 0, 0.461625, 12.5911, 4.76837e-07, -8.8527 )
+
+[node name="SodaCan6" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.458789, 0, -0.888545, 0, 1, 0, 0.888545, 0, -0.458789, 98.2735, 4.76837e-07, 25.6119 )
+
+[node name="Guy" parent="." instance=ExtResource( 10 )]
+
+[node name="Invisible Walls" type="Spatial" parent="."]
+
+[node name="Hill2" type="MeshInstance" parent="Invisible Walls"]
+transform = Transform( 150, 0.00109701, -0.0531046, -0.154018, -0.0316927, -49.9749, -0.169518, 0.999497, -1.58458, 119.249, 0.180374, 37.9863 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 4 )
+
+[node name="Ground" type="StaticBody" parent="Invisible Walls/Hill2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Invisible Walls/Hill2/Ground"]
+shape = SubResource( 2 )
+
+[node name="Hill4" type="MeshInstance" parent="Invisible Walls"]
+transform = Transform( -1.10836, 0.995897, 4.50932, 0.291064, -0.0901744, 49.7962, 149.996, 0.00753394, -0.0633085, -21.6547, 0.112114, -35.6303 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 4 )
+
+[node name="Ground" type="StaticBody" parent="Invisible Walls/Hill4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Invisible Walls/Hill4/Ground"]
+shape = SubResource( 2 )
+
+[node name="levelend" type="MeshInstance" parent="Invisible Walls"]
+transform = Transform( 1.14593, -0.985301, 8.53254, 0.00571856, -0.170655, -49.2665, 149.996, 0.00753394, -0.0633085, 250.799, 0, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 6 )
+
+[node name="Ground" type="Area" parent="Invisible Walls/levelend"]
+transform = Transform( 1, -1.40673e-21, 6.42291e-10, 0, 1, 2.19017e-12, -6.42291e-10, -2.19017e-12, 1, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Invisible Walls/levelend/Ground"]
+shape = SubResource( 5 )
+
+[node name="Hill3" type="MeshInstance" parent="Invisible Walls"]
+transform = Transform( 150, 0, 0, 0, 0.0174699, 49.9924, 0, -0.999847, 0.873491, 118.824, 0, -43.2419 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 4 )
+
+[node name="Ground" type="StaticBody" parent="Invisible Walls/Hill3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Invisible Walls/Hill3/Ground"]
+shape = SubResource( 2 )
+
+[node name="Pencil" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 2.92457, 0, -2.57311 )
+
+[node name="Pencil2" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 75.0439, 0, -13.3166 )
+
+[node name="Pencil15" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 75.0439, 0, -1.12178 )
+
+[node name="Pencil16" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 75.0439, 0, 3.87822 )
+
+[node name="Pencil3" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 51.9716, 0, -2.57311 )
+
+[node name="Pencil4" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 105.798, 0, 0.984637 )
+
+[node name="Pencil5" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 124.177, 0, -12.2409 )
+
+[node name="Pencil6" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 150.498, 0, -11.0327 )
+
+[node name="Pencil7" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 174.425, 0, -2.57311 )
+
+[node name="Pencil8" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 192.071, 0, -2.57311 )
+
+[node name="Pencil9" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 192.071, 0, -21.4071 )
+
+[node name="Pencil10" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 192.071, 0, 14.2483 )
+
+[node name="Pencil11" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 180.823, 0, 14.2483 )
+
+[node name="Pencil12" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 141.859, 0, 14.2483 )
+
+[node name="Pencil13" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 122.433, 0, 14.2483 )
+
+[node name="Pencil14" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 122.433, 0, 14.2483 )
+
+[node name="Points" parent="." instance=ExtResource( 13 )]
+
+[connection signal="body_entered" from="Invisible Walls/levelend/Ground" to="." method="_on_levelend_body_entered"]
