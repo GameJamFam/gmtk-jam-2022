@@ -16,3 +16,32 @@ shape = SubResource( 1 )
 mesh = ExtResource( 2 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 2 )
+
+[node name="1" type="RayCast" parent="."]
+enabled = true
+exclude_parent = false
+
+[node name="2" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+
+[node name="3" type="RayCast" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+
+[node name="4" type="RayCast" parent="."]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+
+[node name="5" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+
+[node name="6" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0 )
+enabled = true
+exclude_parent = false
