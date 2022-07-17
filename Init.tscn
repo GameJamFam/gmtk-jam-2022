@@ -50,3 +50,5 @@ material/0 = SubResource( 1 )
 
 [node name="sounds" type="AudioStreamPlayer" parent="."]
 script = ExtResource( 8 )
+
+[node name="Pause" type="Node2D" parent="."]

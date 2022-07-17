@@ -2,6 +2,7 @@ extends AudioStreamPlayer
 
 onready var play_all = true
 onready var is_playing = false
+onready var pause_pos = 0.0
 
 onready var sfx_bank = {
 		land={playing=false, audio=load("res://sounds/sfx/d20 land.mp3")},
@@ -42,6 +43,19 @@ func play_bgm(name: String):
 	self.stream = bgm_bank[name]
 	self.is_playing = true
 	self.play(0)
+
+func pause_bgm():
+	self.is_playing = false
+	self.pause_pos = self.get_playback_position()
+	self.stream_paused = true
+
+func unpause_bgm():
+	self.is_playing = true
+	self.seek(pause_pos)
+	self.stream_paused = false
+
+func speed_up_bgm():
+	self.pitch_scale = 1.25
 
 func stop_sfx(name: String):
 	sfx_bank[name]['playing'] = false
