@@ -17,3 +17,162 @@ shape = SubResource( 1 )
 mesh = ExtResource( 2 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 2 )
+
+[node name="1" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="2" type="RayCast" parent="."]
+transform = Transform( 0.945581, 0.325387, 0, -0.257915, 0.749506, 0.609689, 0.198385, -0.57651, 0.792641, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="3" type="RayCast" parent="."]
+transform = Transform( 0.470611, -0.882341, 6.30539e-08, -0.63639, -0.33943, -0.692672, 0.611173, 0.325979, -0.721253, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="4" type="RayCast" parent="."]
+transform = Transform( 0.429266, 0.861362, -0.271636, -0.903178, 0.409392, -0.129104, 7.45058e-09, 0.300756, 0.953701, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="5" type="RayCast" parent="."]
+transform = Transform( 0.631285, 0.775551, -4.5526e-08, 0.403873, -0.328746, 0.853705, 0.662092, -0.538932, -0.520756, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="6" type="RayCast" parent="."]
+transform = Transform( 0.987378, -0.158377, 0.00121074, 0.0707168, 0.434006, -0.89813, 0.141718, 0.88688, 0.439728, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="7" type="RayCast" parent="."]
+transform = Transform( 0.910308, -0.413931, -6.21905e-08, -0.294461, -0.647572, 0.702811, -0.290915, -0.639775, -0.711376, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="8" type="RayCast" parent="."]
+transform = Transform( 0.763582, -0.645711, 0, 0.645711, 0.763582, 0, 0, 0, 1, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="9" type="RayCast" parent="."]
+transform = Transform( 0.988385, 0.151968, 2.68627e-08, 0.0466958, -0.303705, -0.951621, -0.144616, 0.940569, -0.307274, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="10" type="RayCast" parent="."]
+transform = Transform( 0.683745, -0.729721, 0, 0.327684, 0.307038, 0.893505, -0.652009, -0.61093, 0.449054, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="11" type="RayCast" parent="."]
+transform = Transform( 0.677544, 0.735483, -4.73448e-08, 0.398309, -0.366932, -0.840661, -0.618292, 0.569585, -0.541561, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="12" type="RayCast" parent="."]
+transform = Transform( 0.986185, -0.16565, 7.34765e-09, 0.0723978, 0.431015, 0.899436, -0.148992, -0.88701, 0.437053, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="13" type="RayCast" parent="."]
+transform = Transform( -0.70301, 0.71118, 0, -0.71118, -0.70301, 0, 0, 0, 1, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="14" type="RayCast" parent="."]
+transform = Transform( 0.942128, 0.335254, 9.99136e-09, -0.261804, 0.735717, -0.624643, -0.209414, 0.588494, 0.78091, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="15" type="RayCast" parent="."]
+transform = Transform( 0.991761, 0.128103, -2.70209e-08, 0.0395946, -0.306537, 0.951035, 0.121831, -0.943199, -0.309083, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="16" type="RayCast" parent="."]
+transform = Transform( 0.72916, -0.684344, 0, 0.371206, 0.395516, -0.840103, 0.574919, 0.612569, 0.542427, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="17" type="RayCast" parent="."]
+transform = Transform( 0.443478, -0.894049, 0.0632706, -0.719245, -0.31287, 0.620321, -0.534802, -0.320606, -0.781792, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="18" type="RayCast" parent="."]
+transform = Transform( 0.467853, 0.883807, -8.08963e-09, -0.711224, 0.376494, 0.593644, 0.524666, -0.277738, 0.804728, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="19" type="RayCast" parent="."]
+transform = Transform( 0.935395, -0.353605, 6.62404e-08, -0.267927, -0.70875, -0.652601, 0.230763, 0.61044, -0.757702, 0, 0, 0 )
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5
+
+[node name="20" type="RayCast" parent="."]
+enabled = true
+exclude_parent = false
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 0, 0, 1, 1 )
+debug_shape_thickness = 5

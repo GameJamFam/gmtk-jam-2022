@@ -22,10 +22,6 @@ func _process(delta):
 		flash_counter += flash_speed
 		var c = flash_amount * abs(sin(flash_counter * delta))
 		set_highlight(c)
-	
-	for child in get_child(0).get_children():
-		if child is RayCast and child.is_colliding():
-			print(child.name)
 
 func _physics_process(delta):
 	
@@ -45,9 +41,10 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("right"):
 		angular_velocity.x = clamp(angular_velocity.x + (rolling_force*delta), -1 * max_angular_velocity, max_angular_velocity)
 		
-func _input(event):
-	if Input.is_action_pressed("ui_accept"):
-		switch_dice()
+func get_result():
+	for child in get_child(0).get_children():
+		if child is RayCast and child.is_colliding():
+			return child.name
 
 func start_flash():
 	invincible = true
