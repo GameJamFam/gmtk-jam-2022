@@ -21,12 +21,11 @@ onready var sfx_bank = {
 }
 
 onready var bgm_bank = {
-	title=load("res://sounds/bgm/Gigakoops - They're Magically Malicious.mp3"),
-	mountain=load("res://sounds/bgm/PEG & The Rejected - All Sing Along.mp3")
+		title={ shouldLoop=false, loopStart=null, audio=load("res://sounds/bgm/RFI Song 1.mp3")},
+		mountain={ shouldLoop=true, loopStart=load("res://sounds/bgm/RFI Song 3B.wav"), audio=load("res://sounds/bgm/RFI Song 3A.wav")},
 }
 
 func play_sfx(name: String, loop: bool = false, init_start: float = 0, loop_start: float = 0):
-	print(get_children())
 	var sfx_ref = sfx_bank[name]
 	if sfx_ref['playing']:
 		return # no duplicate sfx
@@ -46,9 +45,21 @@ func play_sfx(name: String, loop: bool = false, init_start: float = 0, loop_star
 
 
 func play_bgm(name: String):
-	self.stream = bgm_bank[name]
+	if self.is_playing:
+		return
+	var mus = bgm_bank[name]
+	self.stream = mus['audio']
 	self.is_playing = true
 	self.play(0)
+	if mus['shouldLoop']:
+		yield(self, "finished")
+		self.stream = mus['loopStart']
+		self.play(0)
+		while is_playing:
+			yield(self, 'finished')
+			self.play(0)
+	
+	
 
 func pause_bgm():
 	self.is_playing = false
@@ -72,7 +83,11 @@ func stop_all_sfx():
 	for nd in self.get_children():
 		nd.stop()
 
+func stop_bgm():
+	self.stop()
+	self.is_playing = false
+
 func stop_all():
 	stop_all_sfx()
 	self.stop()
-	pass
+	self.is_playing = false

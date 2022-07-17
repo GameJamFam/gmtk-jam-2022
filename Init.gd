@@ -14,16 +14,7 @@ func _ready():
 	$sounds.play_bgm('title')
 
 func _on_Start_pressed():
-	$sounds.play_sfx('gameStart')
-	# clear out current children
-	for ch in self.get_children():
-		if ch.name != "sounds" and ch.name != 'Pause': 
-			ch.queue_free()
-	var game = MainGame.instance()
-	self.add_child(game)
-	$sounds.play_bgm('mountain')
-	able_to_pause = true
-
+	load_new_game()
 
 func pause():
 	$sounds.pause_bgm()
@@ -50,3 +41,34 @@ func _input(event):
 
 	if event.is_action_pressed("ui_up"):
 		speedup()
+
+func on_game_win():
+	var pts = $Mountain/Points.time_left * $Mountain/Die.get_result()
+	$Mountain.queue_free()
+	$Win.visible = true
+	$Win/CenterContainer/Label.text = "You Win! %s points" % pts
+	yield(get_tree().create_timer(3), "timeout")
+	$Win.visible = false
+	load_new_game()
+
+func game_over():
+	$Mountain.queue_free()
+	$Lose.visible = true
+	yield(get_tree().create_timer(3), "timeout")
+	$Lose.visible = false
+	load_new_game()
+
+func load_new_game():
+	$sounds.play_sfx('gameStart')
+	# clear out current children
+	for ch in self.get_children():
+		if ch.name != "sounds" and ch.name != 'Pause' and ch.name != 'Win' and ch.name != 'Lose': 
+			ch.queue_free()
+	var game = MainGame.instance()
+	self.add_child(game)
+	game.connect('game_won', self, 'on_game_win')
+	game.get_node('Points').connect('hurry', self, 'speedup')
+	game.get_node('Points').connect('game_over', self, 'game_over')
+	$sounds.stop_bgm()
+	$sounds.play_bgm('mountain')
+	able_to_pause = true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/RFI Song 1.mp3-4531bd106670aff3abbb458036861c38.mp3str"
+
+[deps]
+
+source_file="res://sounds/bgm/RFI Song 1.mp3"
+dest_files=[ "res://.import/RFI Song 1.mp3-4531bd106670aff3abbb458036861c38.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
