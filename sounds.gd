@@ -5,15 +5,19 @@ onready var is_playing = false
 onready var pause_pos = 0.0
 
 onready var sfx_bank = {
-		land={playing=false, audio=load("res://sounds/sfx/d20 land.mp3")},
-	monsterHit={playing=false, audio=load("res://sounds/sfx/d20 monster hit.mp3")},
-	pencilBounce={playing=false, audio=load("res://sounds/sfx/d20 pencil bounce.mp3")},
-	rampRoll={playing=false, audio=load("res://sounds/sfx/d20 rolling on ramp.mp3")},
-	snowRoll={playing=false, audio=load("res://sounds/sfx/d20 snow rolling.mp3")},
-	waterSplash={playing=false, audio=load("res://sounds/sfx/d20 water splash + travel.mp3")},
-	inertCollision={playing=false, audio=load("res://sounds/sfx/inert collision.mp3")},
-	splash={playing=false, audio=load("res://sounds/sfx/splash.mp3")},
-	waterLoop={playing=false, audio=load("res://sounds/sfx/Water_travel_loopable.wav")},
+		land={playing=false, audio=load("res://sounds/sfx/land_bipmixed.wav")},
+	monsterHit={playing=false, audio=load("res://sounds/sfx/monster hit_bipmixed.wav")},
+	pencilBounce={playing=false, audio=load("res://sounds/sfx/Tree bounce_bipmixed.wav")},
+	rampRoll={playing=false, audio=load("res://sounds/sfx/rolling on ramp_bipmixed.wav")},
+	snowRoll={playing=false, audio=load("res://sounds/sfx/rolling on snow_bipmixed.wav")},
+	waterSplash={playing=false, audio=load("res://sounds/sfx/splash_bipmixed.wav")},
+	inertCollision={playing=false, audio=load("res://sounds/sfx/inert collision_bipmixed.wav")},
+	splash={playing=false, audio=load("res://sounds/sfx/splash_bipmixed.wav")},
+	waterLoop={playing=false, audio=load("res://sounds/sfx/Water splash loop_bipmixed.wav")},
+	
+	gameStart={playing=false, audio=load("res://sounds/sfx/Game_start_bipmixed.wav")},
+	pause={playing=false, audio=load("res://sounds/sfx/Pause_bipmixed.wav")},
+	unpause={playing=false, audio=load("res://sounds/sfx/Unpause_bipmixed.wav")},
 }
 
 onready var bgm_bank = {
@@ -21,19 +25,21 @@ onready var bgm_bank = {
 	mountain=load("res://sounds/bgm/PEG & The Rejected - All Sing Along.mp3")
 }
 
-func play_sfx(name: String, loop: bool = false, init_start: float = 0):
+func play_sfx(name: String, loop: bool = false, init_start: float = 0, loop_start: float = 0):
+	print(get_children())
 	var sfx_ref = sfx_bank[name]
 	if sfx_ref['playing']:
 		return # no duplicate sfx
 	# spawn child
+	sfx_ref['playing'] = true
 	var newSound = AudioStreamPlayer.new()
 	newSound.stream = sfx_ref['audio']
 	self.add_child(newSound)
 	newSound.play(init_start)
-	sfx_ref['playing'] = true
+	yield(newSound, "finished")
 	while loop and sfx_ref['playing']:
+		newSound.play(loop_start)
 		yield(newSound, "finished")
-		newSound.play(0)
 	newSound.stop()
 	sfx_ref['playing'] = false
 	newSound.queue_free()

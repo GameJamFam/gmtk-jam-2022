@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Fonts/facon/Facon.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 61
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 1 )
+
+[node name="Pause" type="Node2D"]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1028.0
+margin_bottom = 600.0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+margin_left = 378.0
+margin_top = 269.0
+margin_right = 650.0
+margin_bottom = 331.0
+custom_colors/font_color = Color( 0.639216, 0.52549, 0.623529, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Paused"
