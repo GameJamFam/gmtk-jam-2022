@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Mountain/Dice/d20.tscn" type="PackedScene" id=1]
+
+[node name="Spatial" type="RigidBody"]
+
+[node name="d20" parent="." instance=ExtResource( 1 )]

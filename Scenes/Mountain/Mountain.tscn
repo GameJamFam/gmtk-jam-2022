@@ -1,158 +1,86 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Models/Dice/d8.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://Models/Dice/d12.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://Models/Dice/d20.obj" type="ArrayMesh" id=3]
-[ext_resource path="res://Models/Dice/d4.obj" type="ArrayMesh" id=4]
-[ext_resource path="res://Models/Dice/d6.obj" type="ArrayMesh" id=5]
-[ext_resource path="res://Models/Dice/d6tex.png" type="Texture" id=6]
-[ext_resource path="res://Models/Dice/d8tex.png" type="Texture" id=7]
-[ext_resource path="res://Models/Dice/d20tex.png" type="Texture" id=8]
-[ext_resource path="res://Models/Dice/d12tex.png" type="Texture" id=9]
-[ext_resource path="res://Models/Dice/d4tex.png" type="Texture" id=10]
-[ext_resource path="res://Models/Obstacles/Vampire_Lord.obj" type="ArrayMesh" id=11]
-[ext_resource path="res://Models/Obstacles/Ooze.obj" type="ArrayMesh" id=12]
-[ext_resource path="res://Models/Obstacles/Centaurtaur.obj" type="ArrayMesh" id=13]
-[ext_resource path="res://Models/Obstacles/Manticore.obj" type="ArrayMesh" id=14]
-[ext_resource path="res://Models/Obstacles/Stone_Golem.obj" type="ArrayMesh" id=15]
-[ext_resource path="res://Models/Obstacles/Bugbear.obj" type="ArrayMesh" id=16]
-[ext_resource path="res://Models/Obstacles/Ettin.obj" type="ArrayMesh" id=17]
-[ext_resource path="res://Models/Obstacles/pencil.obj" type="ArrayMesh" id=18]
-[ext_resource path="res://Models/Obstacles/can.obj" type="ArrayMesh" id=19]
-[ext_resource path="res://Models/Obstacles/penciltex.png" type="Texture" id=20]
+[ext_resource path="res://Scenes/Mountain/Dice/Die.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Mountain/Monsters/Centaurtaur.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Mountain/vhsjwh633jt81.webp" type="Texture" id=3]
+[ext_resource path="res://Scenes/Mountain/Mountain.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Mountain/Dice/Die.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Mountain/Monsters/Bugbear.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Mountain/Monsters/Ettin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Mountain/Monsters/Manticor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Mountain/Obsticles/Soda.tscn" type="PackedScene" id=9]
 
-[sub_resource type="SpatialMaterial" id=1]
-albedo_texture = ExtResource( 10 )
-
-[sub_resource type="SpatialMaterial" id=2]
-albedo_texture = ExtResource( 6 )
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_texture = ExtResource( 7 )
+[sub_resource type="PlaneMesh" id=1]
 
 [sub_resource type="SpatialMaterial" id=4]
-albedo_texture = ExtResource( 9 )
+albedo_texture = ExtResource( 3 )
 
-[sub_resource type="SpatialMaterial" id=5]
-albedo_texture = ExtResource( 8 )
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
 
-[sub_resource type="SpatialMaterial" id=6]
-
-[sub_resource type="SpatialMaterial" id=7]
-
-[sub_resource type="SpatialMaterial" id=11]
-
-[sub_resource type="SpatialMaterial" id=12]
-
-[sub_resource type="SpatialMaterial" id=13]
-
-[sub_resource type="SpatialMaterial" id=14]
-
-[sub_resource type="SpatialMaterial" id=15]
-
-[sub_resource type="SpatialMaterial" id=16]
-
-[sub_resource type="SpatialMaterial" id=17]
-
-[sub_resource type="SpatialMaterial" id=18]
-
-[sub_resource type="SpatialMaterial" id=19]
-
-[sub_resource type="SpatialMaterial" id=20]
-
-[sub_resource type="SpatialMaterial" id=21]
-
-[sub_resource type="SpatialMaterial" id=22]
-
-[sub_resource type="SpatialMaterial" id=23]
-
-[sub_resource type="SpatialMaterial" id=8]
-
-[sub_resource type="SpatialMaterial" id=9]
-
-[sub_resource type="SpatialMaterial" id=10]
-albedo_texture = ExtResource( 20 )
+[sub_resource type="PhysicsMaterial" id=3]
+friction = 2.22
+rough = true
 
 [node name="Mountain" type="Spatial"]
+script = ExtResource( 4 )
 
-[node name="d4" type="MeshInstance" parent="."]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -37.9761, 0, -0.252489 )
-mesh = ExtResource( 4 )
-material/0 = SubResource( 1 )
-
-[node name="d6" type="MeshInstance" parent="."]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 24.038, 0, 0 )
-mesh = ExtResource( 5 )
-material/0 = SubResource( 2 )
-
-[node name="d8" type="MeshInstance" parent="."]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 50.2796, 0, -0.145339 )
-mesh = ExtResource( 1 )
-material/0 = SubResource( 3 )
-
-[node name="d12" type="MeshInstance" parent="."]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
-mesh = ExtResource( 2 )
+[node name="Hill" type="MeshInstance" parent="."]
+transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0 )
+mesh = SubResource( 1 )
 material/0 = SubResource( 4 )
 
-[node name="d20" type="MeshInstance" parent="."]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 85.7281, 0, -0.32929 )
-mesh = ExtResource( 3 )
-material/0 = SubResource( 5 )
+[node name="Ground" type="StaticBody" parent="Hill"]
 
-[node name="Centaurtaur" type="MeshInstance" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 58.056, 0, 32.2137 )
-mesh = ExtResource( 13 )
-material/0 = SubResource( 6 )
-material/1 = SubResource( 7 )
+[node name="CollisionShape" type="CollisionShape" parent="Hill/Ground"]
+shape = SubResource( 2 )
 
-[node name="Bugbear" type="MeshInstance" parent="Centaurtaur"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.1861, 0, 0 )
-mesh = ExtResource( 16 )
-material/0 = SubResource( 11 )
-material/1 = SubResource( 12 )
-material/2 = SubResource( 13 )
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.51589, 6.47258 )
 
-[node name="Ettin" type="MeshInstance" parent="Centaurtaur/Bugbear"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -140.325, 0, 0 )
-mesh = ExtResource( 17 )
-material/0 = SubResource( 14 )
-material/1 = SubResource( 15 )
+[node name="Die" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.23813, 0 )
+input_ray_pickable = false
+mass = 25.19
+physics_material_override = SubResource( 3 )
+gravity_scale = 4.67
+contacts_reported = 100
+contact_monitor = true
+can_sleep = false
+linear_damp = 1.361
+angular_damp = 3.27
+script = ExtResource( 5 )
+rolling_force = 5
+flash_amount = 1
 
-[node name="Manticore" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -97.8218, 0, 42.7961 )
-mesh = ExtResource( 14 )
-material/0 = SubResource( 16 )
-material/1 = SubResource( 17 )
-material/2 = SubResource( 18 )
-material/3 = SubResource( 19 )
+[node name="Spatial2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8952, -4.76837e-07, -2.91223 )
 
-[node name="Ooze" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36.095 )
-mesh = ExtResource( 12 )
-material/0 = SubResource( 20 )
-material/1 = SubResource( 21 )
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7341, 19.7586, 5.97802 )
+visible = false
+light_color = Color( 0.945098, 0.921569, 0.67451, 1 )
+light_energy = 1.224
+light_specular = 16.0
+omni_range = 57.313
 
-[node name="Vampire_Lord" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -154.297, 0, 39.6811 )
-mesh = ExtResource( 11 )
-skeleton = NodePath("../Stone_Golem")
-material/0 = SubResource( 22 )
-material/1 = SubResource( 23 )
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.0297809, 0.825419, -0.563734, 0.0435444, 0.56452, 0.82427, 0.998608, 1.86005e-09, -0.0527543, -17.5841, 18.2104, -4.96634 )
+light_color = Color( 0.890196, 0.764706, 0.368627, 1 )
+light_energy = 1.812
+light_indirect_energy = 1.528
 
-[node name="Stone_Golem" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 118.531, 0, 33.95 )
-mesh = ExtResource( 15 )
-material/0 = SubResource( 8 )
-material/1 = SubResource( 9 )
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 3.0
 
-[node name="pencil" type="MeshInstance" parent="."]
-transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 145.803, 1, 77.5575 )
-mesh = ExtResource( 18 )
-material/0 = SubResource( 10 )
+[node name="Monster" parent="." instance=ExtResource( 6 )]
+transform = Transform( -0.821219, 0, -0.570613, 0, 1, 0, 0.570613, 0, -0.821219, 22.9373, -4.76837e-07, 11.7879 )
 
-[node name="can" type="MeshInstance" parent="."]
-transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 121.318 )
-mesh = ExtResource( 19 )
-material/0 = null
-material/1 = null
+[node name="Monster2" parent="." instance=ExtResource( 7 )]
+transform = Transform( -0.95658, 0, -0.29147, 0, 1, 0, 0.29147, 0, -0.95658, 10.4073, 0.0387707, 10.0105 )
+
+[node name="Monster3" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.299057, 0, -0.954235, 0, 1, 0, 0.954235, 0, 0.299057, 30.4563, 2.38419e-07, 2.01304 )
+
+[node name="SodaCan" parent="." instance=ExtResource( 9 )]
+transform = Transform( 0.461625, 0, -0.887075, 0, 1, 0, 0.887075, 0, 0.461625, 10.2716, 4.76837e-07, -8.8527 )

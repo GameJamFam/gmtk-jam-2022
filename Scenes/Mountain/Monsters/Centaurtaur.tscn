@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Models/Obstacles/Centaurtaur.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 1.25
+height = 3.46
+
+[node name="Monster" type="RigidBody" groups=["monsters"]]
+mode = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.817628, -0.575747, 0, 0.575747, -0.817628, 0, 2.99405, 1.4214 )
+shape = SubResource( 1 )
+
+[node name="Centaurtaur" type="MeshInstance" parent="CollisionShape"]
+transform = Transform( 0.08, 0, 0, 0, -0.0654102, 0.0460598, 0, -0.0460598, -0.0654102, 0, 1.62965, 2.886 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
