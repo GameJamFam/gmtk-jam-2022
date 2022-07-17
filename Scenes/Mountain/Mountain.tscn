@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Mountain/Dice/Die.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Mountain/Monsters/Centaurtaur.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Mountain/Monsters/Ettin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Mountain/Monsters/Manticor.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Mountain/Obsticles/Soda.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Mountain/Obsticles/Pencil.tscn" type="PackedScene" id=10]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -85,3 +86,7 @@ transform = Transform( 0.299057, 0, -0.954235, 0, 1, 0, 0.954235, 0, 0.299057, 3
 
 [node name="SodaCan" parent="." instance=ExtResource( 9 )]
 transform = Transform( 0.461625, 0, -0.887075, 0, 1, 0, 0.887075, 0, 0.461625, 10.2716, 4.76837e-07, -8.8527 )
+
+[node name="Pencil" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.90429, -4.76837e-07, 0.95204 )
+physics_material_override = null
