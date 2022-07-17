@@ -2,6 +2,7 @@ extends RigidBody
 
 signal monster_hit
 signal dice_switched
+signal roll_d0 # DEATH SIGNAL
 
 export var rolling_force = 10
 export var curr_die_idx = 0
@@ -17,6 +18,8 @@ var dice_types = ["d20", "d12", "d8", "d6", "d4"]
 
 var die_highlight = 1 setget set_highlight
 
+onready var sounds = get_node("/root/Main/sounds")
+
 func _process(delta):
 	if invincible:
 		flash_counter += flash_speed
@@ -29,6 +32,7 @@ func _physics_process(delta):
 		var bodies = get_colliding_bodies()
 		for b in bodies:
 			if b.is_in_group("monsters"):
+				sounds.play_sfx("monsterHit")
 				emit_signal("monster_hit")
 				
 	if Input.is_action_pressed("forward"):
@@ -61,7 +65,8 @@ func switch_dice():
 	
 	var nextDieIdx = curr_die_idx + 1
 	if nextDieIdx >= dice_types.size():
-		nextDieIdx = 0
+		emit_signal("roll_d0")
+		return
 	var nextDie = load(dice_path % dice_types[nextDieIdx])
 	
 	add_child(nextDie.instance())
