@@ -43,7 +43,13 @@ func _input(event):
 		speedup()
 
 func on_game_win():
-	var pts = $Mountain/Points.time_left * $Mountain/Die.get_result()
+	var tl = $Mountain/Points.time_left
+	var res = $Mountain/Die.get_result()
+	if res == null or res == 0:
+		res = 1
+	else:
+		res = int(res)
+	var pts = tl * res
 	$Mountain.queue_free()
 	$Win.visible = true
 	$Win/CenterContainer/Label.text = "You Win! %s points" % pts

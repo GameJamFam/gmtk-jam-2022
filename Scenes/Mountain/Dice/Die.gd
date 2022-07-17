@@ -19,8 +19,6 @@ var dice_types = ["d20", "d12", "d8", "d6", "d4"]
 
 var die_highlight = 1 setget set_highlight
 
-onready var sounds = get_node("/root/Main/sounds")
-
 func _process(delta):
 	if invincible:
 		flash_counter += flash_speed
@@ -50,6 +48,7 @@ func get_result():
 	for child in get_child(0).get_children():
 		if child is RayCast and child.is_colliding():
 			return child.name
+	return get_child(0).get_child_count() / 2
 
 func start_flash():
 	invincible = true
