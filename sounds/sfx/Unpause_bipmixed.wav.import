@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Unpause_bipmixed.wav-70adc902aa5274fb63126d26af626ef9.sample"
+
+[deps]
+
+source_file="res://sounds/sfx/Unpause_bipmixed.wav"
+dest_files=[ "res://.import/Unpause_bipmixed.wav-70adc902aa5274fb63126d26af626ef9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
