@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Models/Obstacles/Vampire_Lord.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.68
+height = 2.03
+
+[node name="Monster" type="RigidBody" groups=["monsters"]]
+mode = 1
+contacts_reported = 1
+contact_monitor = true
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.36231, 0 )
+shape = SubResource( 1 )
+
+[node name="Vampire_Lord" type="MeshInstance" parent="CollisionShape"]
+transform = Transform( 0.08, 0, 0, 0, -3.49691e-09, 0.08, 0, -0.08, -3.49691e-09, 0, 5.95486e-08, 1.36231 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null

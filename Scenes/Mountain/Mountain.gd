@@ -14,8 +14,10 @@ func _process(delta):
 	$Camera.look_at_from_position(Vector3(xl, yl, diePos.z), diePos, Vector3(0,1,0))
 	
 func _reconnect_oneshot_signals():
+	$Die.start_flash()
 	$HitTimer.start()
 	yield($HitTimer, "timeout")
+	$Die.stop_flash()
 	$Die.connect("monster_hit", $Die, "switch_dice", [], CONNECT_ONESHOT)
 	
 

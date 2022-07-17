@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Scenes/Mountain/Dice.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Mountain/tree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Mountain/Dice/Die.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Mountain/Monsters/Centaurtaur.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Mountain/vhsjwh633jt81.webp" type="Texture" id=3]
 [ext_resource path="res://Scenes/Mountain/Mountain.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Mountain/Dice.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Mountain/Bugbear.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Mountain/Ettin.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Mountain/Manticor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Mountain/Dice/Die.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Mountain/Monsters/Bugbear.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Mountain/Monsters/Ettin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Mountain/Monsters/Manticor.tscn" type="PackedScene" id=8]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -50,6 +50,8 @@ linear_damp = 1.361
 angular_damp = 3.27
 script = ExtResource( 5 )
 rolling_force = 5
+hit_velocity = 3
+flash_amount = 1
 
 [node name="Spatial2" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8952, -4.76837e-07, -2.91223 )
